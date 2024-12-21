@@ -4,7 +4,7 @@ import HeadTitle from "../../assets/HeadTitle/HeadTitle";
 
 const Spare = () => {
     return (
-        <section className="relative py-10 px-4 max-w-[1440px] rounded-3xl shadow-xl my-16">
+        <section className="relative py-10 px-4 max-w-[1440px] rounded-3xl shadow-xl my-16" id="заказ-запчастей">
             {/* Decorative Background */}
             <div className="absolute top-[-40px] left-[-40px] w-40 h-40 bg-teal-300 opacity-30 rounded-full blur-xl"></div>
             {/* Content */}

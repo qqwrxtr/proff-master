@@ -40,7 +40,7 @@ const Header = () => {
 
                 {/* Navigation Links */}
                 <nav className="hidden md:flex space-x-8 xl:space-x-14">
-                    {["Услуги", "Забронировать Мастера", "Заказ Запчастей"].map((item, index) => (
+                    {["Услуги", "Заказ Запчастей" , "Забронировать Мастера"].map((item, index) => (
                         <motion.a
                             key={index}
                             href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}

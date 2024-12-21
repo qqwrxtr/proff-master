@@ -35,7 +35,7 @@ const Our_Services = () => {
     ];
 
     return (
-        <section className="py-10 px-4 max-w-[1440px] rounded-3xl shadow-xl">
+        <section className="py-10 px-4 max-w-[1440px] rounded-3xl shadow-xl" id="услуги">
             {/* Title */}
             <div className="text-center ">
                 <HeadTitle title="Наши услуги" />
