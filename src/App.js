@@ -1,6 +1,6 @@
 import Banner from './components/Banner/Banner';
 import Header from './components/Header/Header';
-import logo from './logo.svg';
+import Our_Services from './components/Our_Services/Our_Services';
 
 function App() {
   return (
@@ -8,8 +8,9 @@ function App() {
       <header>
         <Header/>
       </header>
-      <main>
+      <main className='flex flex-col justify-center items-center w-full'>
         <Banner/>  
+        <Our_Services/>
       </main>
     </div>
   );

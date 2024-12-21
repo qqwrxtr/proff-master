@@ -7,7 +7,7 @@ import arrow from "./../../assets/img/arrow-down-338-svgrepo-com 1.png";
 const Banner = () => {
     return (
         <section
-            className="relative bg-cover bg-left  bg-no-repeat min-h-[750px] 2xl:min-h-[89.7vh] h-full flex items-center flex-col justify-center px-4 md:px-8 lg:px-16"
+            className="relative bg-cover bg-left w-full bg-no-repeat min-h-[750px] 2xl:min-h-[89.7vh] h-full flex items-center flex-col justify-center px-4 md:px-8 lg:px-16"
             style={{
                 backgroundImage: `url(${backgroundImage})`,
             }}
