@@ -35,13 +35,13 @@ const Our_Services = () => {
     ];
 
     return (
-        <section className="py-10 px-4 max-w-[1440px] rounded-3xl shadow-xl" id="услуги">
+        <section className="py-10 px-4 max-w-[1440px] rounded-3xl" id="услуги">
             {/* Title */}
             <div className="text-center ">
                 <HeadTitle title="Наши услуги" />
                 <p className="text-lg lg:text-xl font-semibold pt-4">
                     Наш сервис более 15 лет на рынке услуг быстрый и качественный ремонт{" "}
-                    <span className="text-teal-600 font-bold">у вас на дому</span> или в мастерской
+                    <span className="main-text font-bold">у вас на дому</span> или в мастерской
                 </p>
             </div>
 

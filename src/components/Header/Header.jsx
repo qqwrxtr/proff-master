@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "./../../assets/img/loogo 2.png";
 import call from "./../../assets/img/call-receive-svgrepo-com 1.png";
+import { Link } from "react-router-dom";
 
 const Header = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -35,7 +36,9 @@ const Header = () => {
             <div className="flex items-center justify-between py-4 px-2 lg:px-6 w-full">
                 {/* Logo */}
                 <div className="text-xl font-bold">
-                    <img src={logo} alt="Logo" className="max-w-full" />
+                    <Link to="/">
+                        <img src={logo} alt="Logo" className="max-w-full" />
+                    </Link>
                 </div>
 
                 {/* Navigation Links */}

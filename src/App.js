@@ -1,25 +1,41 @@
-import Banner from './components/Banner/Banner';
-import Brone from './components/Brone/Brone';
-import FAQ from './components/FAQ/FAQ';
-import Header from './components/Header/Header';
-import Our_Services from './components/Our_Services/Our_Services';
-import Spare from './components/Spare/Spare';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import MainPage from "./Pages/MainPage/MainPage";
+import Privacy from "./Pages/Privacy/Privacy";
+import Terms from "./Pages/Terms/Terms";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import ScrollToTop from "./assets/ScrollToTop/ScrollToTop";
 
 function App() {
-  return (
-    <div className="App">
-      <header>
-        <Header/>
-      </header>
-      <main className='flex flex-col justify-center items-center w-full'>
-        <Banner/>  
-        <Our_Services/>
-        <Spare/>
-        <Brone/>
-        <FAQ/>
-      </main>
-    </div>
-  );
+    return (
+        <Router>
+            <ScrollToTop />
+            <div className="App">
+                {/* Header */}
+                <header>
+                    <Header />
+                </header>
+                
+                {/* Main Content */}
+                <main>
+                    <Routes>
+                        {/* Main Page */}
+                        <Route path="/" element={<MainPage />} />
+                        {/* Privacy Page */}
+                        <Route path="/privacy" element={<Privacy />} />
+                        {/* Terms Page */}
+                        <Route path="/terms" element={<Terms />} />
+                    </Routes>
+                </main>
+                
+                {/* Footer */}
+                <footer>
+                    <Footer />
+                </footer>
+            </div>
+        </Router>
+    );
 }
 
 export default App;
