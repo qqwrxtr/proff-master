@@ -39,7 +39,7 @@ const Our_Services = () => {
             {/* Title */}
             <div className="text-center ">
                 <HeadTitle title="Наши услуги" />
-                <p className="text-lg lg:text-xl font-semibold pt-3">
+                <p className="text-lg lg:text-xl font-semibold pt-4">
                     Наш сервис более 15 лет на рынке услуг быстрый и качественный ремонт{" "}
                     <span className="text-teal-600 font-bold">у вас на дому</span> или в мастерской
                 </p>

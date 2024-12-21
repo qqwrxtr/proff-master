@@ -11,7 +11,7 @@ const Brone = () => {
 
             {/* Background Image */}
             <div
-                className="relative w-full h-[600px] lg:h-[800px] bg-cover bg-center rounded-3xl mt-8"
+                className="relative w-full h-[600px] lg:h-[800px] bg-cover bg-center rounded-3xl mt-4"
                 style={{
                     backgroundImage: `url(${broneimg})`,
                 }}

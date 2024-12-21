@@ -12,7 +12,7 @@ const Spare = () => {
                 {/* Title */}
                 <HeadTitle title="Заказ запчастей" />
 
-                <p className="xs:text-base sm:text-lg md:text-xl pt-3 mb-8 leading-relaxed font-semibold">
+                <p className="xs:text-base sm:text-lg md:text-xl pt-4 mb-8 leading-relaxed font-semibold">
                     Если вы предпочитаете ремонтировать технику самостоятельно, мы поможем вам с выбором качественных запчастей! Наши специалисты проконсультируют вас, чтобы ремонт прошел быстро, эффективно и надежно.
                 </p>
 
