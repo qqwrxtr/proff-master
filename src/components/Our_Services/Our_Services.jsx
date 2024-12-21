@@ -59,7 +59,7 @@ const Our_Services = () => {
                     {services.map((service, index) => (
                         <div
                             key={index}
-                            className="flex items-start pt-0 p-4 rounded-lg shadow-lg bg-white 
+                            className="flex items-start lg:pt-0 p-4 rounded-lg shadow-lg bg-white 
                                         hover:shadow-xl transition-shadow duration-300
                                         xs:flex-col xs:items-center xs:text-center
                                         xs:space-x-0 space-x-4"
