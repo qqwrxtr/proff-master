@@ -3,12 +3,12 @@
   "name": "Proff-Master | Ремонт бытовой и ресторанной техники",
   "icons": [
     {
-      "src": "logo.svg",
+      "src": "logo.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "logo.svg",
+      "src": "logo.png",
       "type": "image/png",
       "sizes": "192x192"
     },
@@ -37,7 +37,7 @@
       "url": "/#services",
       "icons": [
         {
-          "src": "logo.svg",
+          "src": "logo.png",
           "sizes": "192x192",
           "type": "image/png"
         }
@@ -49,7 +49,7 @@
       "url": "/#book-master",
       "icons": [
         {
-          "src": "logo.svg",
+          "src": "logo.png",
           "sizes": "192x192",
           "type": "image/png"
         }
@@ -61,7 +61,7 @@
       "url": "/#contact",
       "icons": [
         {
-          "src": "logo.svg",
+          "src": "logo.png",
           "sizes": "192x192",
           "type": "image/png"
         }
