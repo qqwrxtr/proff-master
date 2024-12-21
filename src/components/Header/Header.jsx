@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "./../../assets/img/loogo 2.png";
 import call from "./../../assets/img/call-receive-svgrepo-com 1.png";
@@ -6,8 +6,32 @@ import call from "./../../assets/img/call-receive-svgrepo-com 1.png";
 const Header = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+    // Close the mobile menu when resizing to a larger screen
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth >= 768) {
+                setIsMobileMenuOpen(false); // Close the menu if the screen width is >= 768px
+            }
+        };
+
+        window.addEventListener("resize", handleResize);
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
+
+    // Animation variants for staggered menu items
+    const menuVariants = {
+        hidden: { opacity: 0, y: -20 },
+        visible: (index) => ({
+            opacity: 1,
+            y: 0,
+            transition: { delay: index * 0.1 },
+        }),
+    };
+
     return (
-        <header className="main-bg text-white h-[100px]">
+        <header className="main-bg text-white h-[100px] relative z-50">
             <div className="flex items-center justify-between py-4 px-2 lg:px-6 w-full">
                 {/* Logo */}
                 <div className="text-xl font-bold">
@@ -15,12 +39,12 @@ const Header = () => {
                 </div>
 
                 {/* Navigation Links */}
-                <nav className="hidden md:flex space-x-7 md lg:space-x-7 xl:space-x-14">
+                <nav className="hidden md:flex space-x-8 xl:space-x-14">
                     {["Услуги", "Забронировать Мастера", "Заказ Запчастей"].map((item, index) => (
                         <motion.a
                             key={index}
                             href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
-                            className="hover:text-gray-300 text-lg md:text-lg xl:text-xl xxl:text-2x font-bold"
+                            className="hover:text-gray-300 text-lg md:text-lg xl:text-xl font-bold"
                             whileHover={{ scale: 1.1 }} // Hover effect
                             whileTap={{ scale: 0.9 }}   // Click effect
                         >
@@ -29,27 +53,26 @@ const Header = () => {
                     ))}
                 </nav>
 
-
                 {/* Contact Info */}
-                <div className="hidden lg:flex items-center space-x-4 ">
+                <div className="hidden lg:flex items-center space-x-4">
                     <a href="tel:+37369327231" className="flex items-center">
                         <div className="call">
-                        <motion.img
-                        src={call}
-                        alt="Call Icon"
-                        className="max-w-[40px] pt-3"
-                        animate={{
-                            rotate: [0, -10, 10, -10, 0], // Rotating to simulate a ringing motion
-                        }}
-                        transition={{
-                            duration: 0.8, // Duration of one ringing cycle
-                            repeat: Infinity, // Infinite loop
-                            ease: "easeInOut", // Smooth easing
-                        }}
-                    />
+                            <motion.img
+                                src={call}
+                                alt="Call Icon"
+                                className="max-w-[40px] pt-3"
+                                animate={{
+                                    rotate: [0, -10, 10, -10, 0], // Rotating to simulate a ringing motion
+                                }}
+                                transition={{
+                                    duration: 0.8, // Duration of one ringing cycle
+                                    repeat: Infinity, // Infinite loop
+                                    ease: "easeInOut", // Smooth easing
+                                }}
+                            />
                         </div>
 
-                        <div className="hidden lg:!block number text-lg md:text-lg xl:text-xl xxl:text-2xl font-bold pl-1 xl:pl-3">
+                        <div className="hidden lg:block number text-lg xl:text-xl font-bold pl-3">
                             <p>+373 69 327 231</p>
                         </div>
                     </a>
@@ -57,7 +80,7 @@ const Header = () => {
 
                 {/* Mobile Menu Button */}
                 <button
-                    className="md:hidden absolute"
+                    className="md:hidden"
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 >
                     <svg
@@ -89,7 +112,7 @@ const Header = () => {
             <AnimatePresence>
                 {isMobileMenuOpen && (
                     <motion.div
-                        className="md:hidden bg-teal-600 space-y-4 py-4 px-6"
+                        className="absolute top-[100px] left-0 w-full bg-teal-600 space-y-4 py-4 px-6 z-50"
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
@@ -100,7 +123,11 @@ const Header = () => {
                                 key={index}
                                 href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
                                 className="block hover:text-gray-300 text-lg font-bold"
-                                whileTap={{ scale: 0.95 }}
+                                initial="hidden"
+                                animate="visible"
+                                exit="hidden"
+                                custom={index}
+                                variants={menuVariants}
                             >
                                 {item}
                             </motion.a>
@@ -113,17 +140,17 @@ const Header = () => {
                                         alt="Call"
                                         className="max-w-[30px] xl:max-w-[40px] w-full"
                                         animate={{
-                                            y: [0, -5, 0], // Bounce effect: moves up and down
+                                            y: [0, -5, 0], // Bounce effect
                                         }}
                                         transition={{
-                                            duration: 1.5, // Duration of one animation cycle
-                                            repeat: Infinity, // Infinite loop
-                                            ease: "easeInOut", // Smooth easing
+                                            duration: 1.5,
+                                            repeat: Infinity,
+                                            ease: "easeInOut",
                                         }}
                                     />
                                 </div>
 
-                                <div className="block number text-lg md:text-lg xl:text-xl xxl:text-2xl font-bold pl-1 xl:pl-3">
+                                <div className="block number text-lg xl:text-xl font-bold pl-3">
                                     <p>+373 69 327 231</p>
                                 </div>
                             </a>
