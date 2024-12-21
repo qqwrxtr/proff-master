@@ -35,7 +35,7 @@ const Our_Services = () => {
     ];
 
     return (
-        <section className="py-10 px-4 max-w-[1440px]">
+        <section className="py-10 px-4 max-w-[1440px] rounded-3xl shadow-xl">
             {/* Title */}
             <div className="text-center ">
                 <HeadTitle title="Наши услуги" />
@@ -77,7 +77,7 @@ const Our_Services = () => {
                                 <h3 className="text-lg md:text-xl font-bold main-text mb-1 sm:mb-2">
                                     {service.title}
                                 </h3>
-                                <p className=" text-sm md:text-base font-medium leading-relaxed">
+                                <p className="text-base font-medium leading-relaxed">
                                     {service.description}
                                 </p>
                             </div>
