@@ -95,17 +95,29 @@ const PrivacyPage = () => {
                         Все изменения будут опубликованы на этой странице.
                     </p>
                 </section>
+
+                <section>
+                    {/* Contact Section */}
+            <div className="mt-12 text-center">
+            <h3 className="text-xl md:text-2xl font-bold main-text mb-4">
+                Есть вопросы?
+            </h3>
+            <p className="text-base md:text-lg text-gray-700 mb-4">
+                Свяжитесь с нами для получения дополнительной информации.
+            </p>
+            <Call_Button />
+        </div>
+                </section>
             </article>
 
-            {/* Contact Section */}
-            <div className="mt-12 text-center">
-                <h3 className="text-xl md:text-2xl font-bold main-text mb-4">
-                    Есть вопросы?
-                </h3>
-                <p className="text-base md:text-lg text-gray-700 mb-4">
-                    Свяжитесь с нами для получения дополнительной информации.
-                </p>
-                <Call_Button/>
+            
+        <div className="mt-12 text-center">
+                <a
+                    href="/"
+                    className="main-bg text-white py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                >
+                    Вернуться на главную
+                </a>
             </div>
         </main>
     );

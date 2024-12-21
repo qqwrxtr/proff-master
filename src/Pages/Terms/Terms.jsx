@@ -83,16 +83,15 @@ const Terms = () => {
                 </section>
 
                 {/* Section 7: Contact Information */}
-                <section className="mb-8" id="contact">
-                    <h2 className="text-2xl font-semibold mb-4 main-text">
-                        Контактная информация
-                    </h2>
-                    <p className="text-base leading-relaxed mb-4">
-                        Если у вас есть вопросы относительно наших условий использования, свяжитесь с нами:
-                    </p>
-                    {/* Call Button */}
-                    <Call_Button />
-                </section>
+                <div className="mt-12 text-center">
+            <h3 className="text-xl md:text-2xl font-bold main-text mb-4">
+                Есть вопросы?
+            </h3>
+            <p className="text-base md:text-lg text-gray-700 mb-4">
+                Свяжитесь с нами для получения дополнительной информации.
+            </p>
+            <Call_Button />
+        </div>
             </article>
 
             {/* Back to Home Link */}
