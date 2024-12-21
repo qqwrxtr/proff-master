@@ -137,15 +137,15 @@ const Header = () => {
                                 <div className="call">
                                     <motion.img
                                         src={call}
-                                        alt="Call"
+                                        alt="Call Icon"
                                         className="max-w-[30px] xl:max-w-[40px] w-full"
                                         animate={{
-                                            y: [0, -5, 0], // Bounce effect
+                                            rotate: [0, -10, 10, -10, 0], // Rotating to simulate a ringing motion
                                         }}
                                         transition={{
-                                            duration: 1.5,
-                                            repeat: Infinity,
-                                            ease: "easeInOut",
+                                            duration: 0.8, // Duration of one ringing cycle
+                                            repeat: Infinity, // Infinite loop
+                                            ease: "easeInOut", // Smooth easing
                                         }}
                                     />
                                 </div>
