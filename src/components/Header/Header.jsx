@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "./../../assets/img/loogo 2.png";
+import logo from "./../../assets/img/logo.png";
 import call from "./../../assets/img/call-receive-svgrepo-com 1.png";
 import { Link } from "react-router-dom";
 
@@ -37,7 +37,7 @@ const Header = () => {
                 {/* Logo */}
                 <div className="text-xl font-bold">
                     <Link to="/">
-                        <img src={logo} alt="Logo" className="max-w-full" />
+                    <img src={logo} alt="Logo" className="max-w-[200px]" />
                     </Link>
                 </div>
 

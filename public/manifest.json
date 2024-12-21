@@ -1,14 +1,14 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Proff-Master",
+  "name": "Proff-Master | Ремонт бытовой и ресторанной техники",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "logo.svg",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "logo.svg",
       "type": "image/png",
       "sizes": "192x192"
     },
@@ -16,10 +16,56 @@
       "src": "logo512.png",
       "type": "image/png",
       "sizes": "512x512"
+    },
+    {
+      "src": "logo1024.png",
+      "type": "image/png",
+      "sizes": "1024x1024"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#067570",
+  "background_color": "#ffffff",
+  "description": "Proff-Master предлагает профессиональный ремонт бытовой и ресторанной техники. Гарантия качества, оперативность и надежность.",
+  "orientation": "portrait-primary",
+  "shortcuts": [
+    {
+      "name": "Услуги",
+      "short_name": "Services",
+      "url": "/#services",
+      "icons": [
+        {
+          "src": "logo.svg",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Забронировать Мастера",
+      "short_name": "Book Master",
+      "url": "/#book-master",
+      "icons": [
+        {
+          "src": "logo.svg",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Контакт",
+      "short_name": "Contact",
+      "url": "/#contact",
+      "icons": [
+        {
+          "src": "logo.svg",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
 }

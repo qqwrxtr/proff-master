@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import logo from "./../../assets/img/loogo 2.png";
+import logo from "./../../assets/img/logo.png";
 import whatsapp from "./../../assets/img/whatsapp.png";
 import viber from "./../../assets/img/viber.png";
 import facebook from "./../../assets/img/face.png";
@@ -21,7 +21,7 @@ const Footer = () => {
                         <img
                             src={logo}
                             alt="Proff Master Logo"
-                            className="mb-4 max-w-full md:max-w-[200px]"
+                            className="mb-4 w-full max-w-[200px]"
                         />
                     </Link>
                     <p className="text-base">
