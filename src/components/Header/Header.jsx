@@ -57,7 +57,7 @@ const Header = () => {
 
                 {/* Mobile Menu Button */}
                 <button
-                    className="md:hidden"
+                    className="md:hidden absolute"
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 >
                     <svg
