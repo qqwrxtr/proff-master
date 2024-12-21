@@ -51,7 +51,7 @@ const Our_Services = () => {
                     <img
                         src={Man_Working}
                         alt="Placeholder"
-                        className="rounded-lg shadow-md max-w-[510px] w-full"
+                        className="max-w-[510px] w-full"
                     />
                 </div>
 
