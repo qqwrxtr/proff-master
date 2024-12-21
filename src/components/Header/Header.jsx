@@ -60,7 +60,7 @@ const Header = () => {
                             <motion.img
                                 src={call}
                                 alt="Call Icon"
-                                className="max-w-[40px] pt-3"
+                                className="max-w-[40px] pt-1"
                                 animate={{
                                     rotate: [0, -10, 10, -10, 0], // Rotating to simulate a ringing motion
                                 }}

@@ -1,4 +1,5 @@
 import Banner from './components/Banner/Banner';
+import Brone from './components/Brone/Brone';
 import Header from './components/Header/Header';
 import Our_Services from './components/Our_Services/Our_Services';
 import Spare from './components/Spare/Spare';
@@ -13,6 +14,7 @@ function App() {
         <Banner/>  
         <Our_Services/>
         <Spare/>
+        <Brone/>
       </main>
     </div>
   );

@@ -8,10 +8,15 @@
   --subline-text: #98CE00;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: "Montserrat", serif;
+  scroll-behavior: smooth;
 }
 
 .main-bg {
