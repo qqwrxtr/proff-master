@@ -55,7 +55,7 @@ const Our_Services = () => {
                     />
                 </div>
 
-                <div className="xs:space-y-2 space-y-4">
+                <div className="space-y-4">
                     {services.map((service, index) => (
                         <div
                             key={index}
