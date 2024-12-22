@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "./../../assets/img/logo.png";
 import call from "./../../assets/img/call-receive-svgrepo-com 1.png";
-import { Link } from "react-router-dom";
 
 const Header = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const navigate = useNavigate();
+    const location = useLocation();
 
     // Close the mobile menu when resizing to a larger screen
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth >= 768) {
-                setIsMobileMenuOpen(false); // Close the menu if the screen width is >= 768px
+                setIsMobileMenuOpen(false);
             }
         };
 
@@ -20,6 +22,26 @@ const Header = () => {
             window.removeEventListener("resize", handleResize);
         };
     }, []);
+
+    // Scroll to the specified ID or redirect to "/" first
+    const handleScrollOrRedirect = (id) => {
+        if (location.pathname === "/") {
+            // Smooth scroll to the element with the specified ID
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: "smooth" });
+            }
+        } else {
+            // Redirect to "/" and scroll after navigation
+            navigate("/");
+            setTimeout(() => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.scrollIntoView({ behavior: "smooth" });
+                }
+            }, 100); // Delay to ensure the DOM updates
+        }
+    };
 
     // Animation variants for staggered menu items
     const menuVariants = {
@@ -37,22 +59,22 @@ const Header = () => {
                 {/* Logo */}
                 <div className="text-xl font-bold">
                     <Link to="/">
-                    <img src={logo} alt="Logo" className="max-w-[200px]" />
+                        <img src={logo} alt="Logo" className="max-w-[200px]" />
                     </Link>
                 </div>
 
                 {/* Navigation Links */}
                 <nav className="hidden md:flex space-x-8 xl:space-x-14">
-                    {["Услуги", "Заказ Запчастей" , "Забронировать Мастера"].map((item, index) => (
-                        <motion.a
+                    {["Услуги", "Заказ Запчастей", "Забронировать Мастера"].map((item, index) => (
+                        <motion.button
                             key={index}
-                            href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
+                            onClick={() => handleScrollOrRedirect(item.toLowerCase().replace(/\s+/g, "-"))}
                             className="hover:text-gray-300 text-lg md:text-lg xl:text-xl font-bold"
-                            whileHover={{ scale: 1.1 }} // Hover effect
-                            whileTap={{ scale: 0.9 }}   // Click effect
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
                         >
                             {item}
-                        </motion.a>
+                        </motion.button>
                     ))}
                 </nav>
 
@@ -65,12 +87,12 @@ const Header = () => {
                                 alt="Call Icon"
                                 className="max-w-[40px] pt-1"
                                 animate={{
-                                    rotate: [0, -10, 10, -10, 0], // Rotating to simulate a ringing motion
+                                    rotate: [0, -10, 10, -10, 0],
                                 }}
                                 transition={{
-                                    duration: 0.8, // Duration of one ringing cycle
-                                    repeat: Infinity, // Infinite loop
-                                    ease: "easeInOut", // Smooth easing
+                                    duration: 0.8,
+                                    repeat: Infinity,
+                                    ease: "easeInOut",
                                 }}
                             />
                         </div>
@@ -122,9 +144,9 @@ const Header = () => {
                         transition={{ duration: 0.3 }}
                     >
                         {["Услуги", "FAQ", "Забронировать Мастера", "Заказ Запчастей"].map((item, index) => (
-                            <motion.a
+                            <motion.button
                                 key={index}
-                                href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
+                                onClick={() => handleScrollOrRedirect(item.toLowerCase().replace(/\s+/g, "-"))}
                                 className="block hover:text-gray-300 text-lg font-bold"
                                 initial="hidden"
                                 animate="visible"
@@ -133,7 +155,7 @@ const Header = () => {
                                 variants={menuVariants}
                             >
                                 {item}
-                            </motion.a>
+                            </motion.button>
                         ))}
                         <div className="flex items-center space-x-4">
                             <a href="tel:+37369327231" className="flex items-center">
@@ -143,12 +165,12 @@ const Header = () => {
                                         alt="Call Icon"
                                         className="max-w-[30px] xl:max-w-[40px] w-full"
                                         animate={{
-                                            rotate: [0, -10, 10, -10, 0], // Rotating to simulate a ringing motion
+                                            rotate: [0, -10, 10, -10, 0],
                                         }}
                                         transition={{
-                                            duration: 0.8, // Duration of one ringing cycle
-                                            repeat: Infinity, // Infinite loop
-                                            ease: "easeInOut", // Smooth easing
+                                            duration: 0.8,
+                                            repeat: Infinity,
+                                            ease: "easeInOut",
                                         }}
                                     />
                                 </div>
