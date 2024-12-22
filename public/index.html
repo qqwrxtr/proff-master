@@ -48,7 +48,6 @@
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Proff-Master Logo" />
-    <meta property="og:image:dark" content="%PUBLIC_URL%/logo_dark.png" />
     <meta property="og:locale" content="ru_RU" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Proff-Master | Ремонт бытовой и ресторанной техники" />
@@ -66,18 +65,37 @@
     <link rel="icon" href="%PUBLIC_URL%/logo.png" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo_dark.png" />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Theme-Specific Styles -->
+    <style>
+      :root {
+        --logo-light: url('%PUBLIC_URL%/logo.png');
+        --logo-dark: url('%PUBLIC_URL%/logo_dark.png');
+      }
 
-    <!-- Manifest -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+      /* Default Logo */
+      .theme-logo {
+        content: var(--logo-light);
+        background-image: var(--logo-light);
+      }
+
+      /* Dark Mode Override */
+      @media (prefers-color-scheme: dark) {
+        .theme-logo {
+          content: var(--logo-dark);
+          background-image: var(--logo-dark);
+        }
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <!-- Root Element -->
+    <div id="root">
+      <!-- Logo Section -->
+      <div
+        class="theme-logo"
+        style="width: 120px; height: 120px; background-size: contain; background-repeat: no-repeat;"
+        aria-label="Proff-Master Logo"
+      ></div>
+    </div>
   </body>
 </html>
