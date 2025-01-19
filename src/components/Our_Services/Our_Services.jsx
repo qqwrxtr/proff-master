@@ -35,22 +35,32 @@ const Our_Services = () => {
     ];
 
     return (
-        <section className="py-10 px-4 max-w-[1440px] rounded-3xl" id="услуги">
+        <section 
+            className="py-10 px-4 max-w-[1440px] rounded-3xl" 
+            id="услуги" 
+            aria-label="Наши услуги"
+        >
             {/* Title */}
-            <div className="text-center ">
+            <div className="text-center">
                 <HeadTitle title="Наши услуги" />
-                <p className="text-lg lg:text-xl font-semibold pt-4">
-                    Наш сервис более 15 лет на рынке услуг быстрый и качественный ремонт{" "}
-                    <span className="main-text font-bold">у вас на дому</span> или в мастерской
+                <p className="text-lg lg:text-xl font-semibold pt-4" aria-label="Service description">
+                    Наш сервис более 15 лет на рынке услуг быстрый и качественный ремонт 
+                    <span className="main-text font-bold"> у вас на дому</span> или в мастерской
                 </p>
             </div>
 
-            <div className="flex flex-col lg:flex-row items-center lg:items-start lg:space-x-8 pt-14 lg:pt-16 xl:pt-20">
+            <div 
+                className="flex flex-col lg:flex-row items-center lg:items-start lg:space-x-8 pt-14 lg:pt-16 xl:pt-20" 
+                aria-label="Service details"
+            >
                 {/* Image Section */}
-                <div className="our__service__show max-w-[510px] w-full">
+                <div 
+                    className="our__service__show max-w-[510px] w-full" 
+                    aria-hidden="true"
+                >
                     <img
                         src={Man_Working}
-                        alt="Placeholder"
+                        alt="Специалист за работой"
                         className="max-w-[510px] w-full"
                     />
                 </div>
@@ -63,21 +73,28 @@ const Our_Services = () => {
                                         hover:shadow-xl transition-shadow duration-300
                                         xs:flex-col xs:items-center xs:text-center
                                         xs:space-x-0 space-x-4"
+                            aria-label={`Услуга: ${service.title}`}
                         >
                             {/* Icon Container */}
-                            <div className="main-bg rounded-2xl p-4 flex items-center justify-center mb-4 xs:mb-2 xs:w-[60px] xs:h-[60px]">
+                            <div 
+                                className="main-bg rounded-2xl p-4 flex items-center justify-center mb-4 xs:mb-2 xs:w-[60px] xs:h-[60px]" 
+                                aria-hidden="true"
+                            >
                                 <img
                                     src={service.icon}
-                                    alt=""
+                                    alt="Иконка для услуги"
                                     className="max-w-[40px] md:max-w-[60px]"
                                 />
                             </div>
                             {/* Content */}
                             <div className="flex-1 xs:w-full">
-                                <h3 className="text-lg md:text-xl font-bold main-text mb-1 sm:mb-2">
+                                <h3 
+                                    className="text-lg md:text-xl font-bold main-text mb-1 sm:mb-2" 
+                                    aria-label="Название услуги"
+                                >
                                     {service.title}
                                 </h3>
-                                <p className="text-base font-medium leading-relaxed">
+                                <p className="text-base font-medium leading-relaxed" aria-label="Описание услуги">
                                     {service.description}
                                 </p>
                             </div>

@@ -22,7 +22,11 @@ const FAQ = () => {
     ];
 
     return (
-        <section className="relative py-10 px-4 max-w-[1440px] mx-auto rounded-3xl shadow-xl w-full">
+        <section 
+            className="relative py-10 px-4 max-w-[1440px] mx-auto rounded-3xl shadow-xl w-full" 
+            id="faq-section" 
+            aria-label="Часто задаваемые вопросы"
+        >
             {/* Title */}
             <div className="title__head text-center">
                 <HeadTitle title="Часто задаваемые вопросы" />
@@ -34,21 +38,28 @@ const FAQ = () => {
                     <div
                         key={index}
                         className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex items-start space-x-4"
+                        aria-label={`Вопрос: ${item.question}`}
                     >
                         {/* Icon */}
-                        <div className="w-12 h-12 items-center justify-center rounded-full shadow-md hidden lg:!flex">
+                        <div 
+                            className="w-12 h-12 items-center justify-center rounded-full shadow-md hidden lg:!flex" 
+                            aria-hidden="true"
+                        >
                             <img
                                 src={question}
-                                alt="Question Icon"
+                                alt="Иконка вопроса"
                                 className="w-12 h-12"
                             />
                         </div>
                         {/* Text */}
                         <div className="text-center lg:text-start">
-                            <h3 className="text-lg md:text-xl font-bold mb-2 main-text">
+                            <h3 
+                                className="text-lg md:text-xl font-bold mb-2 main-text" 
+                                aria-label="Вопрос"
+                            >
                                 {item.question}
                             </h3>
-                            <p className="text-base leading-relaxed ">
+                            <p className="text-base leading-relaxed" aria-label="Ответ">
                                 {item.answer}
                             </p>
                         </div>

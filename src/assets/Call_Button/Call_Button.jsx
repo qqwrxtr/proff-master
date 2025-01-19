@@ -10,8 +10,9 @@ const Call_Button = () => {
             whileHover={{ scale: 1.05 }} // Slight scaling on hover
             whileTap={{ scale: 0.95 }}   // Shrinking effect on click
             transition={{ duration: 0.2, ease: "easeInOut" }} // Smooth animation
+            aria-label="Call us at +373 69 327 231"
         >
-            <div className="icon">
+            <div className="icon" aria-hidden="true">
                 <motion.img
                     src={call}
                     alt="Call Icon"
@@ -27,7 +28,7 @@ const Call_Button = () => {
                 />
             </div>
             <div className="number pl-5">
-                <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white font-bold">
+                <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white font-bold" aria-label="Phone number">
                     +373 69 327 231
                 </p>
             </div>

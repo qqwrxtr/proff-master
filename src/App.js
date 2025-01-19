@@ -23,9 +23,9 @@ function App() {
                         {/* Main Page */}
                         <Route path="/" element={<MainPage />} />
                         {/* Privacy Page */}
-                        <Route path="/privacy" element={<Privacy />} />
+                        <Route path="/privacy/" element={<Privacy />} />
                         {/* Terms Page */}
-                        <Route path="/terms" element={<Terms />} />
+                        <Route path="/terms/" element={<Terms />} />
                     </Routes>
                 </main>
                 

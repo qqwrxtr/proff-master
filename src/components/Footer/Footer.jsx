@@ -8,7 +8,7 @@ import facebook from "./../../assets/img/face.png";
 
 const Footer = () => {
     return (
-        <footer className="main-bg text-white py-10 px-4 mt-16">
+        <footer className="main-bg text-white py-10 px-4 mt-16" aria-label="Footer">
             <motion.div
                 className="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-center items-center md:space-x-12 space-y-8 md:space-y-0"
                 initial={{ opacity: 0, y: 50 }}
@@ -17,30 +17,30 @@ const Footer = () => {
             >
                 {/* Logo and Description */}
                 <div className="flex flex-col items-center md:items-start text-center md:text-left max-w-full md:max-w-[530px] lg:-mr-10">
-                    <Link to="/">
+                    <Link to="/" aria-label="Go to homepage">
                         <img
                             src={logo}
                             alt="Proff Master Logo"
                             className="mb-4 w-full max-w-[200px]"
                         />
                     </Link>
-                    <p className="text-base">
+                    <p className="text-base" aria-label="Footer description">
                         Быстрый и качественный ремонт бытовой техники и ресторанного оборудования.
                         Гарантия ремонта и консультации. Звоните!
                     </p>
                 </div>
 
                 {/* Vertical Line */}
-                <div className="vr h-32 w-[2px] bg-white hidden md:block"></div>
+                <div className="vr h-32 w-[2px] bg-white hidden md:block" aria-hidden="true"></div>
 
                 {/* Links */}
                 <div className="flex flex-col items-center text-center space-y-4 max-w-full md:max-w-[400px] lg:px-10">
-                    <h3 className="font-bold text-lg">Полезные ссылки</h3>
+                    <h3 className="font-bold text-lg" aria-label="Useful links">Полезные ссылки</h3>
                     <motion.div
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
-                        <Link to="/privacy" className="text-base hover:underline">
+                        <Link to="/privacy/" className="text-base hover:underline" aria-label="Privacy Policy">
                             Политика конфиденциальности
                         </Link>
                     </motion.div>
@@ -48,19 +48,19 @@ const Footer = () => {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
-                        <Link to="/terms" className="text-base hover:underline">
+                        <Link to="/terms/" className="text-base hover:underline" aria-label="Terms of Use">
                             Условия использования
                         </Link>
                     </motion.div>
                 </div>
 
                 {/* Vertical Line */}
-                <div className="vr h-32 w-[2px] bg-white hidden md:block"></div>
+                <div className="vr h-32 w-[2px] bg-white hidden md:block" aria-hidden="true"></div>
 
                 {/* Social Media */}
                 <div className="flex flex-col md:text-start md:items-start items-center text-center max-w-full md:max-w-[555px]">
-                    <h3 className="font-bold text-lg mb-4">Социальные сети</h3>
-                    <p className="text-base mb-4">
+                    <h3 className="font-bold text-lg mb-4" aria-label="Social Media">Социальные сети</h3>
+                    <p className="text-base mb-4" aria-label="Connect through messengers">
                         Свяжитесь с мастером через удобные для вас мессенджеры:
                     </p>
                     <div className="flex space-x-10">
@@ -70,6 +70,7 @@ const Footer = () => {
                             rel="noopener noreferrer"
                             whileHover={{ scale: 1.2 }}
                             transition={{ duration: 0.2 }}
+                            aria-label="Contact via WhatsApp"
                         >
                             <img src={whatsapp} alt="WhatsApp" className="w-8 h-8" />
                         </motion.a>
@@ -79,6 +80,7 @@ const Footer = () => {
                             rel="noopener noreferrer"
                             whileHover={{ scale: 1.2 }}
                             transition={{ duration: 0.2 }}
+                            aria-label="Contact via Viber"
                         >
                             <img src={viber} alt="Viber" className="w-8 h-8" />
                         </motion.a>
@@ -88,6 +90,7 @@ const Footer = () => {
                             rel="noopener noreferrer"
                             whileHover={{ scale: 1.2 }}
                             transition={{ duration: 0.2 }}
+                            aria-label="Visit Facebook profile"
                         >
                             <img src={facebook} alt="Facebook" className="w-8 h-8" />
                         </motion.a>
@@ -101,6 +104,7 @@ const Footer = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
+                aria-label="Footer bottom text"
             >
                 © 2025 ProffMaster. Все права защищены.
             </motion.div>

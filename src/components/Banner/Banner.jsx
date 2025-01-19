@@ -11,14 +11,15 @@ const Banner = () => {
             style={{
                 backgroundImage: `url(${backgroundImage})`,
             }}
+            aria-label="Proff-Master Banner Section"
         >
             <div className="text-center text-white max-w-7xl space-y-2 sm:space-y-6">
                 <div className="text_part">
                     {/* Title */}
-                    <h1 className="text-6xl sm:text-7xl md:text-8xl font-bold">Proff-Master</h1>
+                    <h1 className="text-6xl sm:text-7xl md:text-8xl font-bold" aria-label="Proff-Master">Proff-Master</h1>
 
                     {/* Subtitle */}
-                    <div className="text-2xl sm:text-3xl md:text-3xl lg:text-3xl xl:text-4xl 2xl:text-5xl leading-relaxed pt-4 font-bold">
+                    <div className="text-2xl sm:text-3xl md:text-3xl lg:text-3xl xl:text-4xl 2xl:text-5xl leading-relaxed pt-4 font-bold" aria-live="polite">
                         <p>
                             <span className="subline-text">У ВАС НА ДОМУ</span> — КАЧЕСТВЕННЫЙ И БЫСТРЫЙ РЕМОНТ БЫТОВОЙ ТЕХНИКИ,
                             <span className="subline-text"> ЗВОНИТЕ!</span>
@@ -31,7 +32,7 @@ const Banner = () => {
 
                 {/* Call Button */}
                 <div className="call__to__action pt-16 sm:pt-44 md:pt-44 lg:pt-24 xl:pt-32 2xl:pt-44">
-                    <Call_Button />
+                    <Call_Button aria-label="Call to Action Button" />
                 </div>
             </div>
 
@@ -47,8 +48,9 @@ const Banner = () => {
                     repeat: Infinity, // Infinite loop
                     ease: "easeInOut", // Smooth easing
                 }}
+                aria-hidden="true"
             >
-                <img src={arrow} alt="Arrow Down" className="w-10" />
+                <img src={arrow} alt="Scroll Down Arrow" className="w-10" />
             </motion.div>
         </section>
     );

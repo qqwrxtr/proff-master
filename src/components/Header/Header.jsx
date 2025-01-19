@@ -54,24 +54,33 @@ const Header = () => {
     };
 
     return (
-        <header className="main-bg text-white h-[100px] relative z-50">
+        <header className="main-bg text-white h-[100px] relative z-50" aria-label="Header">
             <div className="flex items-center justify-between py-4 px-2 lg:px-6 w-full">
                 {/* Logo */}
                 <div className="text-xl font-bold">
-                    <Link to="/">
-                        <img src={logo} alt="Logo" className="max-w-[200px]" />
+                    <Link to="/" aria-label="Homepage">
+                        <img src={logo} alt="Proff Master Logo" className="max-w-[200px]" />
                     </Link>
                 </div>
 
                 {/* Navigation Links */}
-                <nav className="hidden md:flex space-x-8 xl:space-x-14">
-                    {["Услуги", "Заказ Запчастей", "Забронировать Мастера"].map((item, index) => (
+                <nav className="hidden md:flex space-x-8 xl:space-x-14" aria-label="Navigation Menu">
+                    {[
+                        "Услуги",
+                        "Заказ Запчастей",
+                        "Забронировать Мастера",
+                    ].map((item, index) => (
                         <motion.button
                             key={index}
-                            onClick={() => handleScrollOrRedirect(item.toLowerCase().replace(/\s+/g, "-"))}
+                            onClick={() =>
+                                handleScrollOrRedirect(
+                                    item.toLowerCase().replace(/\s+/g, "-")
+                                )
+                            }
                             className="hover:text-gray-300 text-lg md:text-lg xl:text-xl font-bold"
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.9 }}
+                            aria-label={item}
                         >
                             {item}
                         </motion.button>
@@ -79,7 +88,10 @@ const Header = () => {
                 </nav>
 
                 {/* Contact Info */}
-                <div className="hidden lg:flex items-center space-x-4">
+                <div
+                    className="hidden lg:flex items-center space-x-4"
+                    aria-label="Contact Information"
+                >
                     <a href="tel:+37369327231" className="flex items-center">
                         <div className="call">
                             <motion.img
@@ -107,6 +119,9 @@ const Header = () => {
                 <button
                     className="md:hidden"
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                    aria-label={
+                        isMobileMenuOpen ? "Close Mobile Menu" : "Open Mobile Menu"
+                    }
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -142,22 +157,36 @@ const Header = () => {
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3 }}
+                        aria-label="Mobile Menu"
                     >
-                        {["Услуги", "FAQ", "Забронировать Мастера", "Заказ Запчастей"].map((item, index) => (
+                        {[
+                            "Услуги",
+                            "FAQ",
+                            "Забронировать Мастера",
+                            "Заказ Запчастей",
+                        ].map((item, index) => (
                             <motion.button
                                 key={index}
-                                onClick={() => handleScrollOrRedirect(item.toLowerCase().replace(/\s+/g, "-"))}
+                                onClick={() =>
+                                    handleScrollOrRedirect(
+                                        item.toLowerCase().replace(/\s+/g, "-")
+                                    )
+                                }
                                 className="block hover:text-gray-300 text-lg font-bold"
                                 initial="hidden"
                                 animate="visible"
                                 exit="hidden"
                                 custom={index}
                                 variants={menuVariants}
+                                aria-label={item}
                             >
                                 {item}
                             </motion.button>
                         ))}
-                        <div className="flex items-center space-x-4">
+                        <div
+                            className="flex items-center space-x-4"
+                            aria-label="Mobile Contact Information"
+                        >
                             <a href="tel:+37369327231" className="flex items-center">
                                 <div className="call">
                                     <motion.img
